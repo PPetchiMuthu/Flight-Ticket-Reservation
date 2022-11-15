@@ -6,47 +6,76 @@ import java.util.List;
 
 import flightreservation.model.FligthInfo;
 import flightreservation.model.PassengerInfo;
+import flightreservation.model.TicketInfo;
 
 
 public class FlightDataBase {
-    private  PassengerInfo passengerInfo;
-    public List<FligthInfo> listOfFligth = new ArrayList<>();
-    public List<PassengerInfo> listOfPassenger = new ArrayList<>();
+    private static FlightDataBase flightDataBase = null;
+    private final List<FligthInfo> listOfFlight;
+    private final List<PassengerInfo> listOfPassenger;
+    private final List<TicketInfo> ticketInfo;
+
     public FlightDataBase() {
-        setFlightInfo();
+        listOfFlight = new ArrayList<>();
+        listOfPassenger = new ArrayList<>();
+        ticketInfo = new ArrayList<>();
     }
-    private void setFlightInfo() {
+
+    public static FlightDataBase getInstance() {
+        if (flightDataBase == null) {
+            flightDataBase = new FlightDataBase();
+            setFlight();
+        }
+        return flightDataBase;
+    }
+
+    public List<FligthInfo> getListOfFlight() {
+        return listOfFlight;
+    }
+
+    public void setListOfFlight(FligthInfo listOfFlight) {
+        this.listOfFlight.add(listOfFlight);
+    }
+
+    public List<PassengerInfo> getListOfPassenger() {
+        return listOfPassenger;
+    }
+
+    public void setListOfPassenger(PassengerInfo listOfPassenger) {
+        this.listOfPassenger.add(listOfPassenger);
+    }
+
+    public List<TicketInfo> getTicketInfo() {
+        return ticketInfo;
+    }
+
+    private static void setFlight() {
         FligthInfo flight1 = new FligthInfo();
         flight1.setFlightNumber(2345);
-        flight1.setFlightName("Kolkatta Airways");
-        flight1.setFlightRoutes(Arrays.asList("Chennai", "Bengalure", "Hydrabad", "Kolkatta"));
-        List<Integer> temp1 = Arrays.asList(1, 4, 5, 11);
-        flight1.setFlightTime(temp1);
+        flight1.setFlightName("Kolkata Airways");
+        flight1.setFlightRoutes(Arrays.asList("CHENNAI", "BENGALURU", "HYDERABAD", "KOLKATA"));
+        flight1.setStartingFlightTime("1.00");
+        flight1.setEndingFlightTime("23.00");
         flight1.setNumberOfSeats(10);
         flight1.setFare(430);
-        listOfFligth.add(flight1);
+        FlightDataBase.getInstance().listOfFlight.add(flight1);
         FligthInfo flight2 = new FligthInfo();
         flight2.setFlightNumber(2346);
         flight2.setFlightName("Delhi Airways");
-        flight2.setFlightRoutes(Arrays.asList("Chennai", "Bengalure", "Hydrabad", "Kolkatta", "Delhi"));
-        List<Integer> temp2 = Arrays.asList(23, 3, 6, 10, 13, 16);
-        flight2.setFlightTime(temp2);
+        flight2.setFlightRoutes(Arrays.asList("CHENNAI", "BENGALURU", "HYDERABAD", "KOLKATA", "DELHI"));
+        flight2.setStartingFlightTime("5.00");
+        flight2.setEndingFlightTime("1.00");
         flight2.setNumberOfSeats(10);
-        flight2.setFare(530);
-        listOfFligth.add(flight2);
+        flight2.setFare(470);
+        FlightDataBase.getInstance().listOfFlight.add(flight2);
         FligthInfo flight3 = new FligthInfo();
         flight3.setFlightNumber(2347);
         flight3.setFlightName("Kovai Express");
-        flight3.setFlightRoutes(Arrays.asList("Chennai", "Bengalure", "Hydrabad", "Delhi", "Ahamadabath"));
-        List<Integer> temp3 = Arrays.asList(23, 3, 6, 10, 13, 16);
-        flight3.setFlightTime(temp3);
+        flight3.setFlightRoutes(Arrays.asList("CHENNAI", "BENGALURU", "HYDERABAD", "KOLKATA", "DELHI", "AHMEDABAD"));
+        flight3.setStartingFlightTime("11.00");
+        flight3.setEndingFlightTime("6.00");
         flight3.setNumberOfSeats(10);
         flight3.setFare(530);
-        listOfFligth.add(flight3);
-    }
-
-    public void addPassenger(String userName, int userAge, String gender) {
-        int id = passengerInfo.getPassengerId();
-        listOfPassenger.add(new PassengerInfo(id+2,userName,userAge,gender));
+        FlightDataBase.getInstance().listOfFlight.add(flight3);
     }
 }

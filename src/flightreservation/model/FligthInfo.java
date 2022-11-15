@@ -6,10 +6,26 @@ public class FligthInfo {
     private int flightNumber;
     private String flightName;
     private List<String> flightRoutes;
-    private List<Integer> flightTime;
+    private String  startingFlightTime;
+    private String  endingFlightTime;
     private int numberOfSeats;
     private int fare;
 
+    public String  getStartingFlightTime() {
+        return startingFlightTime;
+    }
+
+    public void setStartingFlightTime(String startingFlightTime) {
+        this.startingFlightTime = startingFlightTime;
+    }
+
+    public String getEndingFlightTime() {
+        return endingFlightTime;
+    }
+
+    public void setEndingFlightTime(String endingFlightTime) {
+        this.endingFlightTime = endingFlightTime;
+    }
     public int getFlightNumber() {
         return flightNumber;
     }
@@ -22,9 +38,6 @@ public class FligthInfo {
         return flightRoutes;
     }
 
-    public List<Integer> getFlightTime() {
-        return flightTime;
-    }
 
     public int getNumberOfSeats() {
         return numberOfSeats;
@@ -46,9 +59,7 @@ public class FligthInfo {
         this.flightRoutes = flightRoutes;
     }
 
-    public void setFlightTime(List<Integer> flightTime) {
-        this.flightTime = flightTime;
-    }
+
 
     public void setNumberOfSeats(int numberOfSeats) {
         this.numberOfSeats = numberOfSeats;
