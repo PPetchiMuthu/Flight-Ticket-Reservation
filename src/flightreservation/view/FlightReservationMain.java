@@ -7,17 +7,21 @@ import java.util.Scanner;
 
 public class FlightReservationMain {
     FlightController flightController;
-    CreateFlight createFlight;
+
     Scanner scan = new Scanner(System.in);
+
     FlightReservationMain() {
         flightController = new FlightController(this);
     }
+
     public static void main(String[] args) {
         FlightReservationMain flightReservationMain = new FlightReservationMain();
         flightReservationMain.getStart();
     }
+
     private void getStart() {
         BookingView bookingView = new BookingView();
+        CreateFlight createFlight = new CreateFlight();
         System.out.println("\n--------------------------------------------------------------------");
         System.out.println("                        Flight Ticket Booking");
         System.out.println("--------------------------------------------------------------------\n");

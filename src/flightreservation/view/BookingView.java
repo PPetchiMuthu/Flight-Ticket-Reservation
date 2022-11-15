@@ -47,13 +47,17 @@ public class BookingView {
                     System.out.println("--------------------------------------------------------------------");
                     System.out.println("                        Please fill the user details ");
                     System.out.println("--------------------------------------------------------------------");
-                    for (int i = 0; i < passenger; i++)
+                    for (int i = 0; i < passenger; i++) {
+                        System.out.println("Passenger "+(i+1)+" Details");
                         getUserInfo(flightNumber, fromStation, toStation);
-                    System.out.println("\nTotal Fare : " + fareAmount);
+                    }
+                    System.out.println("Total Fare : " + fareAmount);
+                    System.out.println("Ticket Booked Successfully");
 //        readyToPay();
                     System.out.println("--------------------------------------------------------------------");
                     System.out.println("\nFlight Details");
                     getBookedDetails(flightNumber, fromStation, toStation, fareAmount);
+                    break;
                 }
         }
     }
@@ -61,9 +65,9 @@ public class BookingView {
     private void getUserInfo(int flightNumber, String fromStation, String toStation) {
         System.out.print("\nName : ");
         String userName = scan.next();
-        System.out.print("\nAge : ");
+        System.out.print("Age : ");
         int userAge = scan.nextInt();
-        System.out.println("\nGender : ");
+        System.out.print("Gender : ");
         String gender = scan.next();
         System.out.println("--------------------------------------------------------------------");
         flightController.addPassengerInfo(userName, userAge, gender, fromStation, toStation, flightNumber);
@@ -81,11 +85,14 @@ public class BookingView {
                 System.out.println("--------------------------------------------------------------------");
                 System.out.println("Flight No: " + info.getFlightNumber() + "\nName : " + info.getFlightName());
                 System.out.println("Departure Time: " + info.getStartingFlightTime() + "\nArrival Time : " + info.getEndingFlightTime());
-                System.out.println("Fare : " + info.getFare() + "\nSeats : " + info.getNumberOfSeats() + "\n\n");
+                System.out.println("Fare : " + info.getFare() + "\nSeats : " + info.getNumberOfSeats() +"\n");
             }
         }
+        int count = 1;
         for (PassengerInfo info : FlightDataBase.getInstance().getListOfPassenger()) {
             if (flightNumber == info.getFlightNumber()) {
+                System.out.println("--------------------------------------------------------------------");
+                System.out.println("Passenger "+(count++)+" Details");
                 System.out.println("--------------------------------------------------------------------");
                 System.out.println("\nName : " + info.getPassengerName() + "\nAge : " + info.getPassengerAge() + "\nGender : " + info.getPassengerGender() + "\nId : " + info.getPassengerId());
                 ticketInfo.setPassengerInfo(info);

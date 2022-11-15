@@ -24,12 +24,13 @@ public class CreateFlight {
         int flightNumber = scan.nextInt();
         System.out.print("Enter the Fight Name : ");
         String flightName = scan.next();
-        System.out.print("How many airport : ");
         List<String> list = new ArrayList<>();
+        System.out.print("How many airport : ");
         int num = scan.nextInt();
         for (int i = 0; i < num; i++) {
-            System.out.print("Airport : ");
-            list.add(scan.next().toUpperCase());
+            System.out.print("Airport "+(i+1)+" : ");
+            String s = scan.next();
+            list.add(s.toUpperCase());
         }
         System.out.print("Departure Time : ");
         String departure = scan.next();
@@ -40,6 +41,8 @@ public class CreateFlight {
         System.out.print("Flight Tickets : ");
         int ticketsPrice = scan.nextInt();
         flightController.addFlight(flightNumber, flightName, list, departure, arrival, seats, ticketsPrice);
+        System.out.println("\n--------------------------------------------------------------------");
+        System.out.println("Flight Added Successfully");
     }
 
     public void showBookedTickets(FlightController flightController) {

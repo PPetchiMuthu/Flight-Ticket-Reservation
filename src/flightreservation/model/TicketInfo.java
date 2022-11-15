@@ -1,5 +1,6 @@
 package flightreservation.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TicketInfo {
@@ -21,7 +22,7 @@ public class TicketInfo {
     private String endingDestination;
     private int priceAmount;
 
-    private List<PassengerInfo> passengerInfo;
+    private List<PassengerInfo> passengerInfo = new ArrayList<>();
 
     public List<PassengerInfo> getPassengerInfo() {
         return passengerInfo;
