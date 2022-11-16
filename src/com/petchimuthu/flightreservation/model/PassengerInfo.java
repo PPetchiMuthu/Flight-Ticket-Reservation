@@ -1,4 +1,4 @@
-package flightreservation.model;
+package com.petchimuthu.flightreservation.model;
 
 public class PassengerInfo {
     private static int passengerId = 2435;

@@ -1,4 +1,4 @@
-package flightreservation.model;
+package com.petchimuthu.flightreservation.model;
 
 import java.util.List;
 

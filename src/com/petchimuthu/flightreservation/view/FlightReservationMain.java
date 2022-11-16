@@ -1,7 +1,6 @@
-package flightreservation.view;
+package com.petchimuthu.flightreservation.view;
 
-import flightreservation.controller.FlightController;
-import flightreservation.db.FlightDataBase;
+import com.petchimuthu.flightreservation.controller.FlightController;
 
 import java.util.Scanner;
 

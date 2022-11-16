@@ -1,10 +1,10 @@
-package flightreservation.view;
+package com.petchimuthu.flightreservation.view;
 
-import flightreservation.controller.FlightController;
-import flightreservation.db.FlightDataBase;
-import flightreservation.model.FligthInfo;
-import flightreservation.model.PassengerInfo;
-import flightreservation.model.TicketInfo;
+import com.petchimuthu.flightreservation.controller.FlightController;
+import com.petchimuthu.flightreservation.db.FlightDataBase;
+import com.petchimuthu.flightreservation.model.FligthInfo;
+import com.petchimuthu.flightreservation.model.PassengerInfo;
+import com.petchimuthu.flightreservation.model.TicketInfo;
 
 import java.util.ArrayList;
 import java.util.List;
