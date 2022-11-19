@@ -1,4 +1,4 @@
-FlightReservation
+Flight Ticket Reservation
 
 Features:
 
